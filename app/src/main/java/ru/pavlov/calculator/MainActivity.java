@@ -152,5 +152,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonMinus = findViewById(R.id.button_minus);
         buttonPlus = findViewById(R.id.button_plus);
         buttonPoint = findViewById(R.id.button_point);
+
+        buttonPercent.setEnabled(false);
+        buttonDivide.setEnabled(false);
+        buttonMultiply.setEnabled(false);
+        buttonPercent.setEnabled(false);
     }
 }
