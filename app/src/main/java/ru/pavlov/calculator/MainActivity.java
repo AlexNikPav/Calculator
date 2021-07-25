@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import ru.pavlov.calculator.calculator.Calculator;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Calculator calculator;
     TextView screen;
@@ -43,37 +45,49 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_clear:
-                calculator.clear();
+                calculator.cancelInputSymbol();
+                break;
+            case R.id.button_plus:
+                calculator.setTypeOperationPlus();
+                break;
+            case R.id.button_minus:
+                calculator.setTypeOperation(Calculator.TYPE_OPERATION_MINUS);
+                break;
+            case R.id.button_equally:
+                calculator.equally();
+                break;
+            case R.id.button_point:
+                calculator.inputOperand(".");
                 break;
             case R.id.button_0:
-                calculator.addToOperand("0");
+                calculator.inputOperand("0");
                 break;
             case R.id.button_1:
-                calculator.addToOperand("1");
+                calculator.inputOperand("1");
                 break;
             case R.id.button_2:
-                calculator.addToOperand("2");
+                calculator.inputOperand("2");
                 break;
             case R.id.button_3:
-                calculator.addToOperand("3");
+                calculator.inputOperand("3");
                 break;
             case R.id.button_4:
-                calculator.addToOperand("4");
+                calculator.inputOperand("4");
                 break;
             case R.id.button_5:
-                calculator.addToOperand("5");
+                calculator.inputOperand("5");
                 break;
             case R.id.button_6:
-                calculator.addToOperand("6");
+                calculator.inputOperand("6");
                 break;
             case R.id.button_7:
-                calculator.addToOperand("7");
+                calculator.inputOperand("7");
                 break;
             case R.id.button_8:
-                calculator.addToOperand("8");
+                calculator.inputOperand("8");
                 break;
             case R.id.button_9:
-                calculator.addToOperand("9");
+                calculator.inputOperand("9");
                 break;
             default:
                 break;
