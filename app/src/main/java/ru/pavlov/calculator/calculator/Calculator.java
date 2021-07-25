@@ -33,6 +33,9 @@ public class Calculator {
     }
 
     public void setTypeOperation(String typeOperation) {
+        if (getCurOperand().equals(CUR_OPERAND_SECOND)) {
+            equally();
+        }
         this.typeOperation = typeOperation;
         setCurOperandSecond();
         showCurOperandOnScreen();
