@@ -1,8 +1,10 @@
 package ru.pavlov.calculator.calculator;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.widget.TextView;
 
-public class Calculator {
+public class Calculator implements Parcelable {
     public static final String LOG_TAG = "Calculator";
 
     public static final String TYPE_OPERATION_PLUS = "+";
@@ -20,9 +22,11 @@ public class Calculator {
     protected String operandOne = "0";
     protected String operandSecond = "0";
     protected String curOperand = null;
+    protected boolean isInputNow = false;
 
     public void setScreen(TextView screen) {
         this.screen = screen;
+        showCurOperandOnScreen();
     }
 
     public Calculator(String typeOperation, String operandOne, String operandSecond) {
@@ -43,6 +47,7 @@ public class Calculator {
 
 
     public void inputOperand(String valueBtn) {
+        isInputNow = true;
         String operand = "";
         switch (getCurOperand()) {
             case CUR_OPERAND_ONE:
@@ -69,6 +74,7 @@ public class Calculator {
                 break;
         }
         showCurOperandOnScreen();
+        isInputNow = false;
     }
 
     public void setTypeOperationPlus() {
@@ -76,6 +82,9 @@ public class Calculator {
     }
 
     public void equally() {
+        if (typeOperation == null) {
+            return;
+        }
         Float resultOperation = new Float(0);
         Float operand1 = Float.valueOf(operandOne);
         Float operand2 = Float.valueOf(operandSecond);
@@ -132,13 +141,16 @@ public class Calculator {
         }
         if (!existPointEnd(value)) {
             Float valueFloat = Float.valueOf(value);
-            if (valueFloat.floatValue() % 1 == 0) {
+            if (!isInputNow() && valueFloat.floatValue() % 1 == 0) {
                 int temp = valueFloat.intValue();
-                value = Integer.valueOf(temp).toString();
+                return Integer.valueOf(temp).toString();
             }
-            return value;
         }
         return value;
+    }
+
+    private boolean isInputNow() {
+        return isInputNow;
     }
 
     protected void showCurOperandOnScreen() {
@@ -179,4 +191,36 @@ public class Calculator {
         }
         showCurOperandOnScreen();
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(typeOperation);
+        dest.writeString(operandOne);
+        dest.writeString(operandSecond);
+        dest.writeString(curOperand);
+    }
+
+    protected Calculator(Parcel in) {
+        typeOperation = in.readString();
+        operandOne = in.readString();
+        operandSecond = in.readString();
+        curOperand = in.readString();
+    }
+
+    public static final Creator<Calculator> CREATOR = new Creator<Calculator>() {
+        @Override
+        public Calculator createFromParcel(Parcel in) {
+            return new Calculator(in);
+        }
+
+        @Override
+        public Calculator[] newArray(int size) {
+            return new Calculator[size];
+        }
+    };
 }

@@ -3,6 +3,7 @@ package ru.pavlov.calculator;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import ru.pavlov.calculator.calculator.Calculator;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    protected static final String STATE_CALCULATOR = "state_calculator";
+    public static final String LOG_TAG = "Calculator";
     Calculator calculator;
     TextView screen;
     Button button0;
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setListeners();
         calculator = new Calculator(null, "", "");
         calculator.setScreen(screen);
+        Log.d(LOG_TAG, "onCreate");
     }
 
     @Override
@@ -92,6 +96,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
+    }
+
+    public void onSaveInstanceState(Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+        instanceState.putParcelable(STATE_CALCULATOR, calculator);
+        Log.d(LOG_TAG, "onSaveInstanceState");
+    }
+
+    protected void onRestoreInstanceState(Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+        calculator = instanceState.getParcelable(STATE_CALCULATOR);
+        calculator.setScreen(screen);
+        Log.d(LOG_TAG, "onRestoreInstanceState");
     }
 
     private void setListeners() {
