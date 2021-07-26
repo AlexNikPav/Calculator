@@ -96,6 +96,12 @@ public class Calculator implements Parcelable {
             case TYPE_OPERATION_MINUS:
                 resultOperation = new Float(operand1.floatValue() - operand2.floatValue());
                 break;
+            case TYPE_OPERATION_MULTIPLY:
+                resultOperation = new Float(operand1.floatValue() * operand2.floatValue());
+                break;
+            case TYPE_OPERATION_DIVIDE:
+                resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                break;
         }
         clearData();
         setOperandOne(resultOperation.toString());

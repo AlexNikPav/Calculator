@@ -57,6 +57,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button_minus:
                 calculator.setTypeOperation(Calculator.TYPE_OPERATION_MINUS);
                 break;
+            case R.id.button_multiply:
+                calculator.setTypeOperation(Calculator.TYPE_OPERATION_MULTIPLY);
+                break;
+            case R.id.button_divide:
+                calculator.setTypeOperation(Calculator.TYPE_OPERATION_DIVIDE);
+                break;
             case R.id.button_equally:
                 calculator.equally();
                 break;
@@ -153,9 +159,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPlus = findViewById(R.id.button_plus);
         buttonPoint = findViewById(R.id.button_point);
 
-        buttonPercent.setEnabled(false);
-        buttonDivide.setEnabled(false);
-        buttonMultiply.setEnabled(false);
         buttonPercent.setEnabled(false);
     }
 }
