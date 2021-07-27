@@ -54,8 +54,8 @@
         android:textSize="@dimen/button_text"
         app:layout_constraintEnd_toStartOf="@+id/button_8"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_point"
-        app:layout_constraintTop_toTopOf="@+id/button_point" />
+        app:layout_constraintStart_toEndOf="@+id/button_0"
+        app:layout_constraintTop_toTopOf="@+id/button_0" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_2"
@@ -124,22 +124,22 @@
         android:background="@color/btn_bg"
         android:text="@string/_9"
         android:textSize="@dimen/button_text"
-        app:layout_constraintEnd_toStartOf="@+id/button_0"
+        app:layout_constraintEnd_toStartOf="@+id/button_equally"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_8"
         app:layout_constraintTop_toTopOf="@+id/button_8" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_point"
+        android:id="@+id/button_0"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_width"
         android:background="@color/btn_bg"
-        android:text="@string/_point"
+        android:text="@string/_0"
         android:textSize="@dimen/button_text"
         app:layout_constraintEnd_toStartOf="@+id/button_7"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/button_equally"
-        app:layout_constraintTop_toTopOf="@+id/button_equally" />
+        app:layout_constraintStart_toEndOf="@+id/button_point"
+        app:layout_constraintTop_toTopOf="@+id/button_point" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_plus"
@@ -166,11 +166,11 @@
         app:layout_constraintTop_toTopOf="@+id/button_6" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_0"
+        android:id="@+id/button_equally"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_width"
         android:background="@color/btn_bg"
-        android:text="@string/_0"
+        android:text="@string/_equally"
         android:textSize="@dimen/button_text"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -184,7 +184,7 @@
         android:background="@color/btn_bg"
         android:text="@string/_divide"
         android:textSize="@dimen/button_text"
-        app:layout_constraintBottom_toTopOf="@+id/button_equally"
+        app:layout_constraintBottom_toTopOf="@+id/button_point"
         app:layout_constraintEnd_toStartOf="@+id/button_multiply"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
@@ -229,14 +229,14 @@
         app:layout_constraintTop_toBottomOf="@+id/textViewScreen" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_equally"
+        android:id="@+id/button_point"
         android:layout_width="@dimen/btn_width"
         android:layout_height="@dimen/btn_width"
         android:background="@color/btn_bg"
-        android:text="@string/_equally"
+        android:text="@string/_point"
         android:textSize="@dimen/button_text"
         app:layout_constraintBottom_toTopOf="@+id/imageView1"
-        app:layout_constraintEnd_toStartOf="@+id/button_point"
+        app:layout_constraintEnd_toStartOf="@+id/button_0"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
         app:layout_constraintTop_toBottomOf="@+id/button_divide" />
