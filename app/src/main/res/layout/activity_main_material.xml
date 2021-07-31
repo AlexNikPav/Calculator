@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:theme="@style/CalculatorMaterial">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageView1"
+        style="@style/Theme.Calculator.Background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="false"
@@ -21,8 +21,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_4"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_4"
         app:layout_constraintBottom_toTopOf="@+id/button_7"
         app:layout_constraintEnd_toStartOf="@+id/button_5"
@@ -32,8 +31,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_plus"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_plus"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -42,8 +40,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_6"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_6"
         app:layout_constraintEnd_toStartOf="@+id/button_plus"
         app:layout_constraintHorizontal_bias="0.5"
@@ -52,8 +49,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_5"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_5"
         app:layout_constraintEnd_toStartOf="@+id/button_6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -62,8 +58,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_7"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_7"
         app:layout_constraintBottom_toTopOf="@+id/button_0"
         app:layout_constraintEnd_toStartOf="@+id/button_8"
@@ -73,8 +68,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_1"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_1"
         app:layout_constraintBottom_toTopOf="@+id/button_4"
         app:layout_constraintEnd_toStartOf="@+id/button_2"
@@ -84,8 +78,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_2"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_2"
         app:layout_constraintEnd_toStartOf="@+id/button_3"
         app:layout_constraintHorizontal_bias="0.5"
@@ -94,8 +87,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_3"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_3"
         app:layout_constraintEnd_toStartOf="@+id/button_divide"
         app:layout_constraintHorizontal_bias="0.5"
@@ -104,8 +96,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_8"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_8"
         app:layout_constraintEnd_toStartOf="@+id/button_9"
         app:layout_constraintHorizontal_bias="0.5"
@@ -114,8 +105,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_9"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_9"
         app:layout_constraintEnd_toStartOf="@+id/button_minus"
         app:layout_constraintHorizontal_bias="0.5"
@@ -124,6 +114,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_0"
+        style="@style/Theme.Calculator.Button"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_width"
         android:text="@string/_0"
@@ -135,16 +126,14 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_point"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button"
         android:text="@string/_point"
         app:layout_constraintStart_toEndOf="@+id/button_8"
         app:layout_constraintTop_toBottomOf="@+id/button_9" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_divide"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_divide"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -153,8 +142,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_minus"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_minus"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -163,14 +151,14 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_multiply"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_multiply"
         app:layout_constraintStart_toEndOf="@+id/button_percent"
         app:layout_constraintTop_toTopOf="@+id/button_percent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_clear"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:layout_width="0dp"
         android:layout_height="@dimen/btn_width"
         android:text="@string/_clear"
@@ -182,30 +170,21 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_equally"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_equally"
         app:layout_constraintStart_toEndOf="@+id/button_9"
         app:layout_constraintTop_toBottomOf="@+id/button_minus" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_percent"
-        android:layout_width="@dimen/btn_width"
-        android:layout_height="@dimen/btn_width"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_percent"
         app:layout_constraintStart_toEndOf="@+id/button_clear"
         app:layout_constraintTop_toTopOf="@+id/button_clear" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewScreen"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/btn_width"
-        android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:gravity="right|center"
-        android:paddingEnd="10dp"
-        android:text="0"
-        android:textSize="@dimen/size_screen"
+        style="@style/Theme.Calculator.Screen"
         app:layout_constraintBottom_toTopOf="@+id/button_clear"
         app:layout_constraintEnd_toEndOf="@+id/button_multiply"
         app:layout_constraintHorizontal_bias="0.5"
