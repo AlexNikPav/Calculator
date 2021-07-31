@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="Theme.Calculator">
+        <attr name="backgroundApp" format="color" />
+        <attr name="colorFirst" format="color" />
+        <attr name="colorSecond" format="color" />
+        <attr name="colorText" format="color" />
+        <attr name="colorTextSecond" format="color" />
+        <attr name="colorScreen" format="color" />
+    </declare-styleable>
+
+    <style name="Theme.Calculator.Button" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">?attr/colorFirst</item>
+        <item name="android:textSize">@dimen/button_text</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:layout_width">@dimen/btn_width</item>
+        <item name="android:layout_height">@dimen/btn_width</item>
+    </style>
+
+    <style name="Theme.Calculator.Button.Secondary">
+        <item name="android:backgroundTint">?attr/colorSecond</item>
+        <item name="android:textColor">?attr/colorTextSecond</item>
+    </style>
+
+    <style name="Theme.Calculator.Background">
+        <item name="android:background">?attr/backgroundApp</item>
+    </style>
+
+    <style name="Theme.Calculator.Screen" parent="Theme.Calculator">
+        <item name="android:background">?attr/colorScreen</item>
+        <item name="android:textColor">?attr/colorText</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">@dimen/btn_width</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:gravity">end|center</item>
+        <item name="android:text">0</item>
+        <item name="android:textSize">@dimen/size_screen</item>
+    </style>
+</resources>
