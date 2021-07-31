@@ -111,7 +111,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_plus"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_plus"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -120,7 +120,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_minus"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_minus"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -129,7 +129,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_equally"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_equally"
         app:layout_constraintEnd_toStartOf="@+id/imageView1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -138,7 +138,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_divide"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_divide"
         app:layout_constraintBottom_toTopOf="@+id/button_point"
         app:layout_constraintEnd_toStartOf="@+id/button_multiply"
@@ -148,7 +148,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_multiply"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_multiply"
         app:layout_constraintEnd_toStartOf="@+id/button_4"
         app:layout_constraintHorizontal_bias="0.5"
@@ -158,7 +158,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_clear"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_clear"
         app:layout_constraintEnd_toStartOf="@+id/button_1"
         app:layout_constraintHorizontal_bias="0.5"
@@ -167,7 +167,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_percent"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_percent"
         app:layout_constraintBottom_toTopOf="@+id/button_divide"
         app:layout_constraintEnd_toStartOf="@+id/button_clear"
@@ -177,7 +177,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_point"
-        style="@style/Theme.Calculator.Button"
+        style="@style/Theme.Calculator.Button.Secondary"
         android:text="@string/_point"
         app:layout_constraintBottom_toTopOf="@+id/imageView1"
         app:layout_constraintEnd_toStartOf="@+id/button_0"
