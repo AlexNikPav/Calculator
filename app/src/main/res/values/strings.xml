@@ -15,4 +15,7 @@
     <string name="_minus">-</string>
     <string name="_multiply">x</string>
     <string name="_divide">/</string>
+    <string name="_clear">c</string>
+    <string name="_equally">=</string>
+    <string name="_percent">%</string>
 </resources>
