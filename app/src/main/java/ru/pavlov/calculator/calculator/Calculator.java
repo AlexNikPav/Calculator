@@ -11,8 +11,6 @@ public class Calculator implements Parcelable {
     public static final String TYPE_OPERATION_MINUS = "-";
     public static final String TYPE_OPERATION_MULTIPLY = "x";
     public static final String TYPE_OPERATION_DIVIDE = "/";
-    public static final String TYPE_OPERATION_CLEAR = "c";
-    public static final String TYPE_OPERATION_EQUALLY = "=";
     public static final String TYPE_OPERATION_PERCENT = "%";
     public static final String CUR_OPERAND_ONE = "one";
     public static final String CUR_OPERAND_SECOND = "second";
@@ -100,7 +98,13 @@ public class Calculator implements Parcelable {
                 resultOperation = new Float(operand1.floatValue() * operand2.floatValue());
                 break;
             case TYPE_OPERATION_DIVIDE:
-                resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                if (operand2.floatValue() != 0) {
+                    resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                }
+            case TYPE_OPERATION_PERCENT:
+                if (operand2.floatValue() != 0) {
+                    resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                }
                 break;
         }
         clearData();
