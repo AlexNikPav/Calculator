@@ -83,32 +83,32 @@ public class Calculator implements Parcelable {
         if (typeOperation == null) {
             return;
         }
-        Float resultOperation = new Float(0);
+        float resultOperation = 0;
         Float operand1 = Float.valueOf(operandOne);
         Float operand2 = Float.valueOf(operandSecond);
 
         switch (typeOperation) {
             case TYPE_OPERATION_PLUS:
-                resultOperation = new Float(operand1.floatValue() + operand2.floatValue());
+                resultOperation = operand1.floatValue() + operand2.floatValue();
                 break;
             case TYPE_OPERATION_MINUS:
-                resultOperation = new Float(operand1.floatValue() - operand2.floatValue());
+                resultOperation = operand1.floatValue() - operand2.floatValue();
                 break;
             case TYPE_OPERATION_MULTIPLY:
-                resultOperation = new Float(operand1.floatValue() * operand2.floatValue());
+                resultOperation = operand1.floatValue() * operand2.floatValue();
                 break;
             case TYPE_OPERATION_DIVIDE:
                 if (operand2.floatValue() != 0) {
-                    resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                    resultOperation = operand1.floatValue() / operand2.floatValue();
                 }
             case TYPE_OPERATION_PERCENT:
                 if (operand2.floatValue() != 0) {
-                    resultOperation = new Float(operand1.floatValue() / operand2.floatValue());
+                    resultOperation = operand1.floatValue() / operand2.floatValue();
                 }
                 break;
         }
         clearData();
-        setOperandOne(resultOperation.toString());
+        setOperandOne(resultOperation + "");
         showCurOperandOnScreen();
     }
 
