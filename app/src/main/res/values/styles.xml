@@ -17,6 +17,11 @@
         <item name="android:layout_height">@dimen/btn_width</item>
     </style>
 
+    <style name="Theme.Calculator.Button.Back">
+        <item name="android:textSize">@dimen/button_text_back</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
     <style name="Theme.Calculator.Button.Secondary">
         <item name="android:backgroundTint">?attr/colorSecond</item>
         <item name="android:textColor">?attr/colorTextSecond</item>

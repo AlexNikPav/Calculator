@@ -2,41 +2,50 @@ package ru.pavlov.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Set;
+import java.util.zip.Inflater;
+
 import ru.pavlov.calculator.calculator.Calculator;
+import ru.pavlov.calculator.settings.SettingsApp;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     protected static final String STATE_CALCULATOR = "state_calculator";
     public static final String LOG_TAG = "Calculator";
-    Calculator calculator;
-    TextView screen;
-    Button button0;
-    Button button1;
-    Button button2;
-    Button button3;
-    Button button4;
-    Button button5;
-    Button button6;
-    Button button7;
-    Button button8;
-    Button button9;
-    Button buttonClear;
-    Button buttonEqually;
-    Button buttonPercent;
-    Button buttonDivide;
-    Button buttonMultiply;
-    Button buttonMinus;
-    Button buttonPlus;
-    Button buttonPoint;
+    private static final int REQUEST_CODE_SETTING_ACTIVITY = 99;
+    private Calculator calculator;
+    private TextView screen;
+    private Button button0;
+    private Button button1;
+    private Button button2;
+    private Button button3;
+    private Button button4;
+    private Button button5;
+    private Button button6;
+    private Button button7;
+    private Button button8;
+    private Button button9;
+    private Button buttonClear;
+    private Button buttonEqually;
+    private Button buttonPercent;
+    private Button buttonDivide;
+    private Button buttonMultiply;
+    private Button buttonMinus;
+    private Button buttonPlus;
+    private Button buttonPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(new SettingsApp(this).getSavedSystemIdStyle());
         setContentView(R.layout.activity_main_material);
         initView();
         setListeners();
@@ -62,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_divide:
                 calculator.setTypeOperation(Calculator.TYPE_OPERATION_DIVIDE);
+                break;
+            case R.id.button_percent:
+                calculator.setTypeOperation(Calculator.TYPE_OPERATION_PERCENT);
                 break;
             case R.id.button_equally:
                 calculator.equally();
@@ -160,5 +172,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonPoint = findViewById(R.id.button_point);
 
         buttonPercent.setEnabled(false);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+            startActivityForResult(intent, REQUEST_CODE_SETTING_ACTIVITY);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
+            super.onActivityResult(requestCode, resultCode, data);
+            return;
+        }
+
+        if (resultCode == RESULT_OK){
+            recreate();
+        }
     }
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="button_text">25sp</dimen>
+    <dimen name="button_text_back">20sp</dimen>
     <dimen name="btn_width">70dp</dimen>
     <dimen name="size_screen">40sp</dimen>
 </resources>
